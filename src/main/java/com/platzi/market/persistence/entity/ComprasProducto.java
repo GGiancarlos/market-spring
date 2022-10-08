@@ -16,7 +16,8 @@ public class ComprasProducto {
     private Boolean estado;
 
     @ManyToOne
-    @JoinColumn(name = "id_compra")
+    @MapsId("idCompra") //nombre de la PK que queremos que se enlace
+    @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
 
     @ManyToOne
